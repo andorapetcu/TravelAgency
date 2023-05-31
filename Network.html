@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background-image: url("Img/network.png");
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: center;
+      background-size: auto;
+      font-family: Arial, Helvetica, sans-serif;
+      font-family: sans;
+    }
+
+    h1 {
+      font-size: 2.4vw;
+      font-weight: normal;
+      font-family: initial;
+      font-style: normal;
+    }
+
+    h2 {
+      font-size: 1.6vw;
+      font-weight: normal;
+      font-family: initial;
+      font-style: normal;
+    }
+
+    h3 {
+      font-size: 1.2vw;
+      font-weight: normal;
+      font-family: initial;
+      font-style: normal;
+    }
+
+    h4 {
+      font-size: 0.8vw;
+      font-weight: normal;
+      font-family: initial;
+      font-style: normal;
+    }
+
+    h5 {
+      font-size: 1.2vw;
+      font-weight: normal;
+      font-family: initial;
+      font-style: italic;
+    }
+
+    h6 {
+      font-size: 1.2vw;
+      font-weight: bolder;
+      font-family: initial;
+      font-style: normal;
+    }
+
+    table {
+      border-spacing: 0;
+      width: 100%;
+      border: 0px solid #ddd;
+    }
+
+    th {
+      cursor: pointer;
+    }
+
+    th,
+    td {
+      font-size: medium;
+      text-align: left;
+    }
+
+    tr:nth-child(even) {
+      background-color: transparent
+    }
+
+    /* Popup container - can be anything you want */
+    .popup {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    /* The actual popup */
+    .popup .popuptext {
+      visibility: hidden;
+      width: 160px;
+      background-color: #555;
+      color: #fff;
+      text-align: center;
+      border-radius: 6px;
+      padding: 8px 0;
+      position: absolute;
+      z-index: 1;
+      bottom: 125%;
+      left: 50%;
+      margin-left: -80px;
+    }
+
+    /* Popup arrow */
+    .popup .popuptext::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: #555 transparent transparent transparent;
+    }
+
+    /* Toggle this class - hide and show the popup */
+    .popup .show {
+      visibility: visible;
+      -webkit-animation: fadeIn 1s;
+      animation: fadeIn 1s;
+    }
+
+    /* Add animation (fade in the popup) */
+    @-webkit-keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    th {
+      font-size: 1.8vw;
+      font-style: inherit;
+    }
+
+    tr {
+      font-size: 1.6vw;
+      font-style: inherit;
+    }
+
+    a.two:link {
+      text-decoration: none;
+      color: black;
+    }
+
+    a.two:link {color:black}
+a.two:visited {color:blue;}
+a.two:hover {color: blue;}
+
+ a:hover {
+      text-decoration: underline;
+    }
+
+    ::-webkit-scrollbar {
+      width: 0vw;
+      background: transparent;
+    }
+
+    div.CopyRights {
+      position: fixed;
+      left: 45vw;
+      bottom: 0vw;
+      text-size: 0.8vw;
+      text-decoration: underline;
+      border: none;
+    }
+
+    .fa {
+      font-size: 1.8vw;
+      width: 1.8vw;
+      text-align: center;
+      margin: 0vw 0vw;
+    }
+
+    .fa {
+      opacity: 0.6;
+    }
+
+    .fa:hover {
+      opacity: 0.2;
+    }
+
+    .fa-facebook {
+      background: #3B5998;
+      color: white;
+    }
+
+    .fa-twitter {
+      background: #55ACEE;
+      color: white;
+    }
+
+    .fa-google {
+      background: #dd4b39;
+      color: white;
+    }
+
+    .fa-youtube {
+      background: #bb0000;
+      color: white;
+    }
+
+    .fa-instagram {
+      background: #125688;
+      color: white;
+    }
+
+    .fa-yahoo {
+      background: #430297;
+      color: white;
+    }
+
+    div.TitleDescriptor {
+      position: fixed;
+      left: 2vw;
+      right: auto;
+      top: 0vw;
+      bottom: auto;
+      font-size: 1.8w;
+      border: none;
+      text-align: left;
+    }
+
+    div.TabelDescriptor {
+      position: fixed;
+      background-olor: transparent;
+      left: 5vw;
+      right: 5vw;
+      top: 9vh;
+      bottom: 9vh;
+      font-family: inherit;
+      font-style: inherit;
+      font-size: 1.5vw;
+      overflow: scroll;
+    }
+
+    div.AbsoluteOButton {
+      position: fixed;
+      top: 0.4vw;
+      right: 0.4vw;
+      width: auto;
+      height: auto;
+      border: none;
+    }
+
+    div.AbsoluteOBottomBar {
+      position: fixed;
+      bottom: 0.4vw;
+      right: 0.4vw;
+      width: auto;
+      height: auto;
+      border: none;
+    }
+
+    .btn-group .obutton {
+      background-color: transparent;
+      border: none;
+      color: black;
+      block-size: auto;
+      text-align: center;
+      font-size: 1.6vw;
+      cursor: pointer;
+      width: auto;
+      display: inline-block;
+      float: right;
+    }
+
+    .btn-group .obutton:not(:last-child) {
+      border-bottom: none;
+    }
+
+    .btn-group .obutton:hover {
+      background-color: #ccc;
+      text-decoration: underline;
+    }
+
+    .btn-group .vbutton:not(:last-child) {
+      border-bottom: none;
+    }
+
+    .btn-group .vbutton:hover {
+      background-color: #ccc;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="CopyRights">
+    <div class="popup" onclick="myFunction()">
+      <h4> 2022 Copyrights By Elena Andora </h4>
+      <span class="popuptext" id="myPopup"> &#169 Elena  Andora Petcu  </span>
+    </div>
+
+    <script>
+      // When the user clicks on div, open the popup
+      function myFunction() {
+        var popup = document.getElementById("myPopup");
+        popup.classList.toggle("show");
+      }
+    </script>
+  </div>
+
+  <div class="TitleDescriptor">
+    <h1>
+      Lista filialelor agentiei de turism Andora Travel.
+      </h2>
+  </div>
+  
+
+  <div class="btn-group">
+    <div class="AbsoluteOButton">
+      <button class="obutton"><a href="Safari.html"> Safari </a> </button>
+      <button class="obutton"><a href="Mountaineering.html"> Mountaineering </a> </button>
+      <button class="obutton"><a href="Business.html"> Business </a> </button>
+      <button class="obutton"><a href="HolidayTravel.html"> Holiday Travel </a> </button>
+      <button class="obutton"><a href="index.html"> <i class="fa fa-home"> </i> </a> </button>
+    </div>
+  </div>
+
+  <div class="AbsoluteOBottomBar">
+    <a href="https://www.facebook.com/" class="fa fa-facebook"></a>
+    <a href="https://twitter.com/?lang=com" class="fa fa-twitter"></a>
+    <a href="https://www.google.com/intl/ro/gmail/about/" class="fa fa-google"></a>
+    <a href="https://www.youtube.com/" class="fa fa-youtube"></a>
+    <a href="https://www.instagram.com/" class="fa fa-instagram"></a>
+    <a href="https://ro.yahoo.com/" class="fa fa-yahoo"></a>
+  </div>
+
+  <div class="  TabelDescriptor ">
+    <table id="myTable">
+      <tr>
+        <!--When a header is clicked, run the sortTable function, with a parameter, 0 for sorting by names, 1 for sorting by country:-->
+        <th onclick="sortTable(0)"> Agentia </th>
+        <th onclick="sortTable(1)"> Adresa </th>
+        <th onclick="sortTable(2)"> Telefon </th>
+        <th onclick="sortTable(2)"> eMail </th>
+        <th onclick="sortTable(3)"> Persoana de contact </th>
+      </tr>
+
+      <tr>
+        <td> Bucuresti </td>
+        <td> Strada Porumbaru Emanoil, Nr. 27; cod postal: 011422 </td>
+        <td> 0734567091 </td>
+        <td> <a class="two" href="mailto:agentie_mircea@yahoo.com">agentie_mircea@yahoo.com</a.two> </td>
+        <td> Mircea Tanasie </td>
+      </tr>
+
+      <tr>
+        <td> Iasi </td>
+        <td> Alee Alecsandri Vasile, Nr. 47; cod postal: 700054  </td>
+        <td> 0756734890 </td>
+        <td> <a class="two" href="mailto:agentie_mihai_23@yahoo.com">agentie_mihai_23@yahoo.com </a.two></td>
+        <td> Mihai Petcu </td>
+      </tr>
+
+
+      <tr>
+        <td> Cluj </td>
+        <td> Strada Agricultorilor, Nr. 1; cod postal: 400408 </td>
+        <td> 0798235719 </td>
+        <td> <a class="two" href="mailto:agentie_maria_28@yahoo.com">agentie_maria_28@yahoo.com </a.two> </td>
+        <td> Maria Poenar </td>
+      </tr>
+
+
+      <tr>
+        <td> Timisoara </td>
+        <td> Bulevard Dambovita, Nr. 77; cod postal: 300151 </td>
+        <td> 0766523471 </td>
+        <td> <a class="two" href="mailto:agentie_daria_907@yahoo.com">agentie_daria_907@yahoo.com </a.two> </td>
+        <td> Daria Dima </td>
+      </tr>
+
+
+      <tr>
+        <td> Constanta </td>
+        <td> 	Strada Alecsandri Vasile, Nr. 44; cod postal: 900743 </td>
+        <td> 0754432456 </td>
+        <td> <a class="two" href="mailto:agentie_maria_5678@yahoo.com">agentie_maria_5678@yahoo.com </a.two> </td>
+        <td> Maria Stelea </td>
+      </tr>
+
+
+      <tr>
+        <td> Craiova </td>
+        <td> Strada Alexandria, Nr. 82; cod postal: 200641 </td>
+        <td> 0755624566 </td>
+        <td> <a class="two" href="mailto:agentie.ana_98@yahoo.com">agentie.ana_98@yahoo.com </a.two>  </td>
+        <td> Ana Zota </td>
+      </tr>
+
+
+      <tr>
+        <td> Brasov </td>
+        <td> 	Strada Avram Iancu, Nr. 33; cod postal: 500068  </td>
+        <td> 0756762345 </td>
+        <td> <a class="two" href="mailto:agentie.moraru_ioan@yahoo.com">agentie.moraru_ioan@yahoo.com  </a.two> </td>
+        <td> Moraru Ioan </td>
+      </tr>
+
+
+      <tr>
+        <td> Galati </td>
+        <td> Strada Basarabiei, Nr. 31; cod postal: 800002 </td>
+        <td> 0788673455 </td>
+        <td> <a class="two" href="mailto:agentie-ana-maria_978@yahoo.com">agentie-ana-maria_978@yahoo.com  </a.two> </td>
+        <td> Ana-Maria Petrescu </td>
+      </tr>
+
+
+      <tr>
+        <td> Ploiesti </td>
+        <td> Strada Arborilor , Nr. 82; cod postal: 100196 </td>
+        <td> 0788654326 </td>
+        <td> <a class="two" href="mailto:agentie.andreeapopescu_0008@yahoo.com">agentie.andreeapopescu_0008@yahoo.com  </a.two> </td>
+        <td> Andreea Popescu </td>
+      </tr>
+
+
+      <tr>
+        <td> Oradea </td>
+        <td> 	Strada Academiei, Nr 43; cod postal: 410001 </td>
+        <td> 0756774435 </td>
+        <td>  <a class="two" href="mailto:agentie.ana_98009@yahoo.com">agentie.ana_98009@yahoo.com  </a.two> </td>
+        <td> Ana Huzuneanu </td>
+      </tr>
+
+
+      <tr>
+        <td> Braila </td>
+        <td> Strada Cojocari, Nr. 67; cod postal: 810001 </td>
+        <td> 0767893425 </td>
+        <td> <a class="two" href="mailto:agentie.lucian_005@yahoo.com">agentie.lucian_005@yahoo.com  </a.two> </td>
+        <td> Lucian Ilea </td>
+      </tr>
+
+
+      <tr>
+        <td> Arad </td>
+        <td> Strada Barabas Bela, Nr. 50; cod postal: 310005 </td>
+        <td> 0767543567 </td>
+        <td> <a class="two" href="mailto:agentie.andreisorescu_58@yahoo.com">agentie.andreisorescu_58@yahoo.com  </a.two>  </td>
+        <td> Andrei Sorescu </td>
+      </tr>
+
+
+      <tr>
+        <td> Pitesti </td>
+        <td> Strada Grivitei, Nr. 12; cod postal:110010 </td>
+        <td> 0788665432 </td>
+        <td> <a class="two" href="mailto:agentie-dorelmihai5673@yahoo.com ">agentie-dorelmihai5673@yahoo.com </a.two> </td>
+        <td> Dorel Mihai </td>
+      </tr>
+
+
+      <tr>
+        <td> Sibiu </td>
+        <td> Strada Agârbiceanu Ion, Nr. 79; cod postal: 550049 </td>
+        <td> 0788654356 </td>
+        <td> <a class="two" href="mailto:agentie.tudorpopescu@yahoo.com ">agentie.tudorpopescu@yahoo.com </a.two> </td>
+        <td> Tudor Popescu </td>
+      </tr>
+
+
+      <tr>
+        <td> Bacau </td>
+        <td> Strada 8 Martie, Nr. 6; cod postal: 600182 </td>
+        <td> 0799765435 </td>
+        <td> <a class="two" href="mailto:agentie-teodor34@yahoo.com ">agentie-teodor34@yahoo.com </a.two> </td>
+        <td> Teodor Nistor </td>
+      </tr>
+
+
+      <tr>
+        <td> Targu-Mures </td>
+        <td> Strada Alunis , Nr. 65; cod postal: 540076 </td>
+        <td> 0767945678 </td>
+        <td> <a class="two" href="mailto:agentie-catalinmoise@yahoo.com ">agentie-catalinmoise@yahoo.com </a.two>  </td>
+        <td> Catalin Moise </td>
+      </tr>
+
+
+      <tr>
+        <td> Baia Mare </td>
+        <td> Strada Europa, Nr. 66; cod postal: 430016 </td>
+        <td> 0766543567 </td>
+        <td> <a class="two" href="mailto:agentie_moraru_petru@yahoo.com ">agentie_moraru_petru@yahoo.com </a.two>  </td>
+        <td> Petru Moraru </td>
+      </tr>
+
+
+      <tr>
+        <td> Buzau </td>
+        <td> Strada Bărnuțiu Simion; Nr. 31; cod postal: 120234 </td>
+        <td> 0789567844 </td>
+        <td>  <a class="two" href="mailto:agentie.mihai_mocanu3@yahoo.com ">agentie.mihai_mocanu3@yahoo.com </a.two> </td>
+        <td> Mihai Mocanu </td>
+      </tr>
+
+
+      <tr>
+        <td> Botosani </td>
+        <td> 	Strada Manolesti Deal, Nr. 31; cod postal: 710003 </td>
+        <td> 0788456734 </td>
+        <td> <a class="two" href="mailto:agentie_mihai_tanasie35@yahoo.com ">agentie_mihai_tanasie35@yahoo.com </a.two> </td>
+        <td> Mihai Tanasie </td>
+      </tr>
+
+
+      <tr>
+        <td> Satu Mare </td>
+        <td> Strada Coposu Corneliu, Nr. 7; cod postal: 440005 </td>
+        <td> 0786544324 </td>
+        <td> <a class="two" href="mailto:agentie_sorin_deaconu333@yahoo.com ">agentie_sorin_deaconu333@yahoo.com </a.two> </td>
+        <td> Sorin Deaconu </td>
+      </tr>
+
+
+      <tr>
+        <td> Ramnicu valcea </td>
+        <td> Strada 1 Mai nr. 1; cod postal: 240015 </td>
+        <td> 0788653598 </td>
+        <td> <a class="two" href="mailto:agentie.anastasia_pescaru@yahoo.com ">agentie.anastasia_pescaru@yahoo.com </a.two> </td>
+        <td> Anastasia Pescaru </td>
+      </tr>
+
+
+      <tr>
+        <td> Drobeta-Turnu Severin </td>
+        <td> Strada Cicero nr. 47; cod postal:   220005 </td>
+        <td> 0700986854 </td>
+        <td> <a class="two" href="mailto:agentie_teodor678@yahoo.com ">agentie_teodor678@yahoo.com </a.two> </td>
+        <td> Teodor Bancu </td>
+      </tr>
+
+
+      <tr>
+        <td> Suceava </td>
+        <td> Strada 22 Decembrie nr. 3; cod postal: 720131 </td>
+        <td> 0756453357 </td>
+        <td> <a class="two" href="mailto:agentie.ana_98990@yahoo.com ">agentie.ana_98990@yahoo.com </a.two> </td>
+        <td> Ana Moisa </td>
+      </tr>
+
+
+      <tr>
+        <td> Piatra Neamt </td>
+        <td> 	Fundatura Penes Curcanul, Nr. 56; cod postal: 610004 </td>
+        <td> 0787675321 </td>
+        <td> <a class="two" href="mailto:agentie_ionela_008@yahoo.com ">agentie_ionela_008@yahoo.com </a.two> </td>
+        <td> Ionela Vlasan </td>
+      </tr>
+
+
+      <tr>
+        <td> Targu Jiu </td>
+        <td> Strada 22 Decembrie 1989 nr. 7; cod postal: 210215 </td>
+        <td> 0776856785 </td>
+        <td> <a class="two" href="mailto:agentie.claudia_sorescu@yahoo.com ">agentie.claudia_sorescu@yahoo.com </a.two> </td>
+        <td> Claudia Sorescu </td>
+      </tr>
+
+
+      <tr>
+        <td> Targoviste </td>
+        <td> Strada Alexandru Ioan Cuza nr. 11; cod postal: 130007 </td>
+        <td> 0788563450 </td>
+        <td> <a class="two" href="mailto:agentie.ramona_pop23@yahoo.com ">agentie.ramona_pop23@yahoo.com </a.two> </td>
+        <td> Ramona Pop </td>
+      </tr>
+
+
+      <tr>
+        <td> Focsani </td>
+        <td> Strada Asachi Gheorghe nr 1; cod postal: 620107 </td>
+        <td> 0776543280 </td>
+        <td> <a class="two" href="mailto:agentie_mirela_34@yahoo.com ">agentie_mirela_34@yahoo.com </a.two> </td>
+        <td> Mirela Dragomir </td>
+      </tr>
+
+
+      <tr>
+        <td> Bistrita </td>
+        <td> Strada Apicultorilor, nr 56; cod postal: 420134 </td>
+        <td> 0788654300 </td>
+        <td> <a class="two" href="mailto:agentie_mihaela_tamas34@yahoo.com ">agentie_mihaela_tamas34@yahoo.com </a.two> </td>
+        <td> Mihaela Tamas </td>
+      </tr>
+
+
+      <tr>
+        <td> Tulcea </td>
+        <td> Strada Suvenir, nr. 53; cod postal: 820010 </td>
+        <td> 0786436677 </td>
+        <td> <a class="two" href="mailto:agentie.denisa_lehadus23@yahoo.com ">agentie.denisa_lehadus23@yahoo.com </a.two> </td>
+        <td> Denisa Lehadus </td>
+      </tr>
+
+
+      <tr>
+        <td> Resita </td>
+        <td> Strada Canalului, nr. 65; cod postal: 320035 </td>
+        <td> 0789003455 </td>
+        <td> <a class="two" href="mailto:agentie.radu_danescu45@yahoo.com ">agentie.radu_danescu45@yahoo.com </a.two> </td>
+        <td> Radu Danescu </td>
+      </tr>
+
+
+      <tr>
+        <td> Alba-Iulia </td>
+        <td> Strada Blaga Lucian, nr. 87; cod postal: 510149 </td>
+        <td> 0789504367 </td>
+        <td> <a class="two" href="mailto:agentie.mihai_petrescu78@yahoo.com ">agentie.mihai_petrescu78@yahoo.com </a.two> </td>
+        <td> Mihai Petrescu </td>
+      </tr>
+
+
+
+
+    </table>
+
+    <script>
+      function sortTable(n) {
+        var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+        table = document.getElementById("myTable");
+        switching = true;
+        //Set the sorting direction to ascending:
+        dir = "asc";
+        /*Make a loop that will continue until
+        no switching has been done:*/
+        while (switching) {
+          //start by saying: no switching is done:
+          switching = false;
+          rows = table.rows;
+          /*Loop through all table rows (except the
+          first, which contains table headers):*/
+          for (i = 1; i < (rows.length - 1); i++) {
+            //start by saying there should be no switching:
+            shouldSwitch = false;
+            /*Get the two elements you want to compare,
+            one from current row and one from the next:*/
+            x = rows[i].getElementsByTagName("TD")[n];
+            y = rows[i + 1].getElementsByTagName("TD")[n];
+            /*check if the two rows should switch place,
+            based on the direction, asc or desc:*/
+            if (dir == "asc") {
+              if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                //if so, mark as a switch and break the loop:
+                shouldSwitch = true;
+                break;
+              }
+            } else if (dir == "desc") {
+              if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                //if so, mark as a switch and break the loop:
+                shouldSwitch = true;
+                break;
+              }
+            }
+          }
+          if (shouldSwitch) {
+            /*If a switch has been marked, make the switch
+            and mark that a switch has been done:*/
+            rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+            switching = true;
+            //Each time a switch is done, increase this count by 1:
+            switchcount++;
+          } else {
+            /*If no switching has been done AND the direction is "asc",
+            set the direction to "desc" and run the while loop again.*/
+            if (switchcount == 0 && dir == "asc") {
+              dir = "desc";
+              switching = true;
+            }
+          }
+        }
+      }
+    </script>
+
+  </div>
+
+
+</body>
+
+</html>

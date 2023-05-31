@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background-image: url("Img/holiday.png");
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+      font-family: Arial, Helvetica, sans-serif;
+      font-family: sans;
+    }
+
+    h1 {
+      font-size: 2.8vw;
+      font-weight: normal;
+      font-family: initial;
+      font-style: normal;
+    }
+
+    h2 {
+      font-size: 2.0vw;
+      font-weight: normal;
+      font-family: initial;
+      font-style: normal;
+    }
+
+
+    h4 {
+      font-size: 0.8vw;
+      font-weight: normal;
+      font-family: initial;
+      font-style: normal;
+    }
+
+    /* Popup container - can be anything you want */
+    .popup {
+      position: re;
+      display: inline-block;
+      cursor: pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    /* The actual popup */
+    .popup .popuptext {
+      visibility: hidden;
+      width: 160px;
+      background-color: #555;
+      color: #fff;
+      text-align: center;
+      border-radius: 6px;
+      padding: 8px 0;
+      position: absolute;
+      z-index: 1;
+      bottom: 125%;
+      left: 50%;
+      margin-left: -80px;
+    }
+
+    /* Popup arrow */
+    .popup .popuptext::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: #555 transparent transparent transparent;
+    }
+
+    /* Toggle this class - hide and show the popup */
+    .popup .show {
+      visibility: visible;
+      -webkit-animation: fadeIn 1s;
+      animation: fadeIn 1s;
+    }
+
+    /* Add animation (fade in the popup) */
+    @-webkit-keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    a:link {
+      text-decoration: none;
+      color: black;
+    }
+
+    ::-webkit-scrollbar {
+      width: 0vw;
+      background: transparent;
+    }
+
+    div.HomePageContent {
+      background-color: transparent;
+      font-size: 1.6vw;
+      position: fixed;
+      left: 5vw;
+      top: 8vw;
+      right: 5vw;
+      bottom: 9vw;
+      overflow: auto;
+    }
+
+
+    div.Content {
+      background-color: transparent;
+      font-size: 1.4vw;
+      position: fixed;
+      left: 5vw;
+      top: 8vw;
+      right: 40vw;
+      bottom: 9vw;
+      overflow: auto;
+    }
+    
+    div.CopyRights {
+      position: fixed;
+      left: 40vw;
+      bottom: 0vw;
+      text-size: 0.8vw;
+      text-decoration: underline;
+      border: none;
+    }
+
+    div.TitleDescriptor {
+      position: fixed;
+      left: 5vw;
+      top: 3vw;
+      font-size: 3.6vw;
+      font-style: normal;
+      border: none;
+      text-align: left;
+    }
+
+    .motto {
+      background-color: transparent;
+      position: fixed;
+      left: auto;
+      right: 3%;
+      top: 6%;
+      width: auto;
+      height: auto;
+      text-align: left;
+    }
+
+
+    .fa {
+      font-size: 1.8vw;
+      width: 1.8vw;
+      text-align: center;
+      margin: 0vw 0vw;
+    }
+
+    .fa {
+      opacity: 0.6;
+    }
+
+    .fa:hover {
+      opacity: 0.2;
+    }
+
+    .fa-facebook {
+      background: #3B5998;
+      color: white;
+    }
+
+    .fa-twitter {
+      background: #55ACEE;
+      color: white;
+    }
+
+    .fa-google {
+      background: #dd4b39;
+      color: white;
+    }
+
+    .fa-youtube {
+      background: #bb0000;
+      color: white;
+    }
+
+    .fa-instagram {
+      background: #125688;
+      color: white;
+    }
+
+    .fa-yahoo {
+      background: #430297;
+      color: white;
+    }
+
+    div.AbsoluteOButton {
+      position: fixed;
+      top: 0.4vw;
+      right: 0.4vw;
+      width: auto;
+      height: auto;
+      border: none;
+    }
+
+    div.AbsoluteVButton {
+      position: fixed;
+      bottom: 1.4vw;
+      left: 1.6vw;
+      border: none;
+    }
+
+    div.Logo {
+      position: fixed;
+      top: 0vw;
+      left: 1vw;
+      width: 30%;
+      height: 30%;
+      border: none;
+    }
+
+
+    div.AbsoluteOBottomBar {
+      position: fixed;
+      bottom: 0.4vw;
+      right: 0.4vw;
+      width: auto;
+      height: auto;
+      border: none;
+    }
+
+
+    .btn-group .obutton {
+      background-color: transparent;
+      border: none;
+      color: black;
+      block-size: auto;
+      text-align: center;
+      font-size: 1.6vw;
+      cursor: pointer;
+      width: auto;
+      display: inline-block;
+      float: right;
+    }
+
+    .btn-group .vbutton {
+      background-color: transparent;
+      border: none;
+      color: black;
+      block-size: auto;
+      text-align: left;
+      font-size: 1.6vw;
+      line-height: 1.6vw;
+      cursor: pointer;
+      width: auto;
+      display: block;
+    }
+
+    .btn-group .obutton:not(:last-child) {
+      border-bottom: none;
+    }
+
+    .btn-group .obutton:hover {
+      background-color: #ccc;
+      text-decoration: underline;
+    }
+
+    .btn-group .vbutton:not(:last-child) {
+      border-bottom: none;
+    }
+
+    .btn-group .vbutton:hover {
+      background-color: #ccc;
+      text-decoration: underline;
+    }
+
+    div.ImagePageContent {
+      position: fixed;
+      left: 63vw;
+      top: 9vh;
+      right: 3vw;
+      bottom: 7vh;
+      text-align: center;
+      font-size: 2vw;
+      display: block;
+      overflow: scroll;
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <div class="CopyRights">
+    <div class="popup" onclick="myFunction()">
+      <h4> 2022 Copyrights By Elena Andora </h4>
+      <span class="popuptext" id="myPopup"> &#169 Elena Andora Petcu </span>
+    </div>
+
+    <script>
+      // When the user clicks on div, open the popup
+      function myFunction() {
+        var popup = document.getElementById("myPopup");
+        popup.classList.toggle("show");
+      }
+    </script>
+
+  </div>
+
+
+  <div class="btn-group">
+    <div class="AbsoluteVButton">
+      <button class="vbutton"> <a href="Network.html"> Network Location </a> </button>
+      <button class="vbutton"> <a href="Romania.html"> Romania </a> </button>
+      <button class="vbutton"> <a href="WorldWide.html"> World Wide </a> </button>
+      <button class="vbutton"> <a href="About.html"> About </a> </button>
+    </div>
+  </div>
+
+  <div class="btn-group">
+    <div class="AbsoluteOButton">
+      <button class="obutton"><a href="Safari.html"> Safari </a> </button>
+      <button class="obutton"><a href="Mountaineering.html"> Mountaineering </a> </button>
+      <button class="obutton"><a href="Business.html"> Business </a> </button>
+      <button class="obutton"><a href="HolidayTravel.html"> Holiday Travel </a> </button>
+      <button class="obutton"><a href="index.html"> <i class="fa fa-home"> </i> </a> </button>
+    </div>
+  </div>
+
+
+  <div class="AbsoluteOBottomBar">
+    <a href="https://www.facebook.com/" class="fa fa-facebook"></a>
+    <a href="https://twitter.com/?lang=com" class="fa fa-twitter"></a>
+    <a href="https://www.google.com/intl/ro/gmail/about/" class="fa fa-google"></a>
+    <a href="https://www.youtube.com/" class="fa fa-youtube"></a>
+    <a href="https://www.instagram.com/" class="fa fa-instagram"></a>
+    <a href="https://ro.yahoo.com/" class="fa fa-yahoo"></a>
+  </div>
+
+ 
+  <div class="HomePageContent" style="text-align: justify;">
+
+    <div class="TitleDescriptor">
+      <h1>
+        Vacanta de vis!
+      </h1>
+
+     
+    <div class="Content">
+      <p.l style="color: transparent;">MMMM</p.l>
+      <h2 style="font-style: italic; font-weight: lighter;">
+        Visezi la o vacanta de lux, la un hotel de 5 stele? O croaziera relaxanta, plina de surprize? Sau o pauza de la probleme, cu distractii in cele mai cautate cluburi din lume? Atunci esti la locul potrivit. Agentia noastra va asigura cea mai buna vacanta. In functie de cerintele dumneavoastra, cei mai buni agenti ai nostrii va vor selecta o gama variata de oferte ce va satisfac toate asteptarile. 
+      </h2>
+      
+      <p.l style="color: transparent;">MMMM</p.l>
+      <h2 style="font-style: italic; font-weight: lighter;">
+            Conteacteaza-ne acum pe email!
+      </h2>
+
+
+    </div>
+
+  </div>
+
+  <div class=" ImagePageContent ">
+
+    <h1>
+      <a id="Img_1"> </a>
+      Have fun... lots of it.
+    </h1>
+    <img src="Img/holidaytr.jpg " alt="" width="auto" height="100%">
+    
+  </div>
+
+  
+
+</body>

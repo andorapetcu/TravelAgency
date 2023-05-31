@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background-image: url("Img/world.png");
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+      font-family: Arial, Helvetica, sans-serif;
+      font-family: sans;
+    }
+
+    h1 {
+      font-size: 2.8vw;
+      font-weight: normal;
+      font-family: initial;
+      font-style: normal;
+    }
+
+    h2 {
+      font-size: 2.0vw;
+      font-weight: normal;
+      font-family: initial;
+      font-style: normal;
+    }
+
+    h3 {
+      font-size: 2.4vw;
+      font-weight: normal;
+      font-family: initial;
+      font-style: normal;
+    }
+
+    h4 {
+      font-size: 0.8vw;
+      font-weight: normal;
+      font-family: initial;
+      font-style: normal;
+    }
+
+    h5 {
+      font-size: 1.5vw;
+      font-weight: normal;
+      font-family: initial;
+      font-style: normal;
+    }
+
+    /* Popup container - can be anything you want */
+    .popup {
+      position: re;
+      display: inline-block;
+      cursor: pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    /* The actual popup */
+    .popup .popuptext {
+      visibility: hidden;
+      width: 160px;
+      background-color: #555;
+      color: #fff;
+      text-align: center;
+      border-radius: 6px;
+      padding: 8px 0;
+      position: absolute;
+      z-index: 1;
+      bottom: 125%;
+      left: 50%;
+      margin-left: -80px;
+    }
+
+    /* Popup arrow */
+    .popup .popuptext::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: #555 transparent transparent transparent;
+    }
+
+    /* Toggle this class - hide and show the popup */
+    .popup .show {
+      visibility: visible;
+      -webkit-animation: fadeIn 1s;
+      animation: fadeIn 1s;
+    }
+
+    /* Add animation (fade in the popup) */
+    @-webkit-keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    a:link {
+      text-decoration: none;
+      color: black;
+    }
+
+    ::-webkit-scrollbar {
+      width: 0vw;
+      background: transparent;
+    }
+
+    div.HomePageContent {
+      background-color: transparent;
+      font-size: 1.6vw;
+      position: fixed;
+      left: 5vw;
+      top: 8vw;
+      right: 5vw;
+      bottom: 9vw;
+      overflow: auto;
+    }
+
+    .motto {
+      background-color: transparent;
+      position: fixed;
+      left: 70vw;
+      right: 5vw;
+      top: 5vw;
+      width: 20vw;
+      font-size: 1.8vw;
+      height: auto;
+    }
+
+    div.CopyRights {
+      position: fixed;
+      left: 40vw;
+      bottom: 0vw;
+      text-size: 0.8vw;
+      text-decoration: underline;
+      border: none;
+    }
+
+    div.TitleDescriptor {
+      position: fixed;
+      left: 5vw;
+      top: 13vw;
+      font-size: 3.6vw;
+      font-style: normal;
+      border: none;
+      text-align: left;
+    }
+
+    .motto {
+      background-color: transparent;
+      position: fixed;
+      left: auto;
+      right: 3%;
+      top: 6%;
+      width: auto;
+      height: auto;
+      text-align: left;
+    }
+
+
+    .fa {
+      font-size: 1.8vw;
+      width: 1.8vw;
+      text-align: center;
+      margin: 0vw 0vw;
+    }
+
+    .fa {
+      opacity: 0.6;
+    }
+
+    .fa:hover {
+      opacity: 0.2;
+    }
+
+    .fa-facebook {
+      background: #3B5998;
+      color: white;
+    }
+
+    .fa-twitter {
+      background: #55ACEE;
+      color: white;
+    }
+
+    .fa-google {
+      background: #dd4b39;
+      color: white;
+    }
+
+    .fa-youtube {
+      background: #bb0000;
+      color: white;
+    }
+
+    .fa-instagram {
+      background: #125688;
+      color: white;
+    }
+
+    .fa-yahoo {
+      background: #430297;
+      color: white;
+    }
+
+    div.AbsoluteOButton {
+      position: fixed;
+      top: 0.4vw;
+      right: 0.4vw;
+      width: auto;
+      height: auto;
+      border: none;
+    }
+
+    div.AbsoluteVButton {
+      position: fixed;
+      bottom: 1.4vw;
+      left: 1.6vw;
+      border: none;
+    }
+
+    div.Logo {
+      position: fixed;
+      top: 0vw;
+      left: 1vw;
+      width: 30%;
+      height: 30%;
+      border: none;
+    }
+
+
+    div.AbsoluteOBottomBar {
+      position: fixed;
+      bottom: 0.4vw;
+      right: 0.4vw;
+      width: auto;
+      height: auto;
+      border: none;
+    }
+
+
+    .btn-group .obutton {
+      background-color: transparent;
+      border: none;
+      color: black;
+      block-size: auto;
+      text-align: center;
+      font-size: 1.6vw;
+      cursor: pointer;
+      width: auto;
+      display: inline-block;
+      float: right;
+    }
+
+    .btn-group .vbutton {
+      background-color: transparent;
+      border: none;
+      color: black;
+      block-size: auto;
+      text-align: left;
+      font-size: 1.6vw;
+      line-height: 1.6vw;
+      cursor: pointer;
+      width: auto;
+      display: block;
+    }
+
+    .btn-group .obutton:not(:last-child) {
+      border-bottom: none;
+    }
+
+    .btn-group .obutton:hover {
+      background-color: #ccc;
+      text-decoration: underline;
+    }
+
+    .btn-group .vbutton:not(:last-child) {
+      border-bottom: none;
+    }
+
+    .btn-group .vbutton:hover {
+      background-color: #ccc;
+      text-decoration: underline;
+    }
+
+    div.HomePageContent {
+      background-color: transparent;
+      position: fixed;
+      left: 5vw;
+      top: 9vh;
+      right: 66vw;
+      bottom: 22vh;
+      text-align: justify;
+      overflow: auto;
+    }
+
+    div.ImagePageContent {
+      position: fixed;
+      left: 37vw;
+      top: 9vh;
+      right: 5vw;
+      bottom: 7vh;
+      text-align: center;
+      font-size: 2vw;
+      display: block;
+      overflow: scroll;
+    }
+  </style>
+</head>
+
+<body>
+
+
+
+  <div class="CopyRights">
+    <div class="popup" onclick="myFunction()">
+      <h4> 2022 Copyrights By Elena Andora </h4>
+      <span class="popuptext" id="myPopup"> &#169 Elena Andora Petcu </span>
+    </div>
+
+    <script>
+      // When the user clicks on div, open the popup
+      function myFunction() {
+        var popup = document.getElementById("myPopup");
+        popup.classList.toggle("show");
+      }
+    </script>
+
+  </div>
+
+
+  <div class="btn-group">
+    <div class="AbsoluteVButton">
+      <button class="vbutton"> <a href="Network.html"> Network Location </a> </button>
+      <button class="vbutton"> <a href="Romania.html"> Romania </a> </button>
+      <button class="vbutton"> <a href="WorldWide.html"> World Wide </a> </button>
+      <button class="vbutton"> <a href="About.html"> About </a> </button>
+      </ div>
+    </div>
+
+    <div class="btn-group">
+      <div class="AbsoluteOButton">
+        <button class="obutton"><a href="Safari.html"> Safari </a> </button>
+        <button class="obutton"><a href="Mountaineering.html"> Mountaineering </a> </button>
+        <button class="obutton"><a href="Business.html"> Business </a> </button>
+        <button class="obutton"><a href="HolidayTravel.html"> Holiday Travel </a> </button>
+        <button class="obutton"><a href="index.html"> <i class="fa fa-home"> </i> </a> </button>
+      </div>
+    </div>
+
+
+    <div class="AbsoluteOBottomBar">
+      <a href="https://www.facebook.com/" class="fa fa-facebook"></a>
+      <a href="https://twitter.com/?lang=com" class="fa fa-twitter"></a>
+      <a href="https://www.google.com/intl/ro/gmail/about/" class="fa fa-google"></a>
+      <a href="https://www.youtube.com/" class="fa fa-youtube"></a>
+      <a href="https://www.instagram.com/" class="fa fa-instagram"></a>
+      <a href="https://ro.yahoo.com/" class="fa fa-yahoo"></a>
+    </div>
+
+    <div class="HomePageContent" style="font-size: 1.6vw; text-align: justify; ">
+
+      <h1><a href="#Img_1">
+          <p.i style="font-style: italic;">Croatia</p.i>
+        </a>
+      </h1>
+
+      <h3>Dubrovnik</h3>
+
+      <h5> 
+        <p.l style="color: transparent;">MMMM</p.l>
+        Dubrovnik se află în sudul ţării. Este înconjurat de trei insuliţe din arhipeleagul Elafiti, Lopud, Lokrum și Koločep, fiind situat în apropiere de Trsten şi Orasac. A fost întemeiat în secolul al VII-lea, însă în secolul al XVII-lea a ars până la temelii. După incendiu oraşul a fost din nou ridicat, iar arhitectura folosită a fost cea în stil baroc. Fiind inclus pe lista Patrimoniului Mondial UNESCO, întregul oraş este un adevărat muzeu. Cele mai importante monumente culturale sunt Palatul Rectorului, zidurile orașului, Lovrijenac, Columna lui Orlando, Cetatea Sv. Ivan și multe altele. De-a lungul promenadei Stradun veți găsi tot ce își poate dori un turist, de la magazine cu suveniruri până la numeroase restaurante. Noaptea, Stradun se transformă în locul principal pentru distracție și petreceri nocturne.</h5>
+
+   
+
+
+      <h1><a href="#Img_2">
+         <p.i style="font-style: italic;">Franta</p.i>
+        </a>
+      </h1>
+      
+      <h5>
+          <p.l style="color: transparent;">MMMM</p.l>
+          De la savoarea, arta si romantismul Parisului la grandorea Alpilor si frumoasele castele de pe Valea Loarei, o vizita in Franta iti va furniza amintiri pentru o viata. Franta este o tara a marilor contraste, oferind o varietate nesfarsita de destinatii turistice, o mare diversitate geografica, gastronomica si climatica, pe langa bogatia patrimoniului cultural si artistic. Daca adaugam facilitatile de acces, infrastructura turistica si de transport foarte bine dezvoltate, devine mai usor de inteles de ce un mare procent de francezi isi petrec vacantele acasa si isi numesc cu mandrie tara „La Belle France”</h5>
+  
+
+
+
+      <h1><a href="#Img_3">
+          <p.i style="font-style: italic;">Germania</p.i>
+        </a>
+      </h1>
+        
+     <h5>
+          <p.l style="color: transparent;">MMMM</p.l>
+          Berlinul este cu siguranță un oraș încărcat de istorie și unul dintre cele mai populare locuri de vizitat în Germania. După modelul Acropolei din Atena și construită pentru regele Frederic William al II-lea în 1791, monumentala Poarta Brandenburg din gresie din cartierul Mitte din Berlin a fost prima structură neoclasică a orașului.</h5>
+
+
+
+    
+      <h1><a href="#Img_4">
+          <p.i style="font-style: italic;">Grecia</p.i>
+        </a>
+      </h1>
+          
+     <h5>
+         <p.l style="color: transparent;">MMMM</p.l>
+         O tara cu o cultura si o istorie care a influentat dezvoltarea intregii omeniri, Grecia este, fara doar si poate, o destinatie care trebuie bifata macar o data in viata. Daca, insa, analizezi cate iti ofera, poti descoperi ca un singur sejur nu este suficient pentru a te bucura de tot ce are de oferit ea. Arhitectura, plajele, mancarea si ospitalitatea grecilor sunt motivele pentru care in aceasta tara ajung intr-un singur an peste 30 de milioane de turisti.</h5>
+  
+
+
+
+         <h1><a href="#Img_5">
+          <p.i style="font-style: italic;">Italia</p.i>
+        </a>
+      </h1>
+        
+     <h5>
+          <p.l style="color: transparent;">MMMM</p.l>
+          Italia este o destinație ce ne uimește de fiecare dată cu priveliștile sale de vis, îmbinând cu succes frumusețea mării și a plajelor nisipoase acompaniate de grandoarea muntelui, ce înconjoară falnic zonele de relaxare. Atât pentru istoria sa de capitală a unei mari părți a Europei antice, cât și pentru rolul său actual de unul dintre cele mai vibrante orașe ale Europei, pentru majoritatea turiștilor care călătoresc în Italia, Roma se află în fruntea listei celor mai apreciate locuri de vizitat în Europa. Relicvele străvechilor sale glorii – Colosseumul, Forumul, Panteonul, Calea Appiană și Dealul Palatin – se confruntă cu imensele bogății ale Vaticanului ca atracții de top.</h5>
+
+
+
+
+          <h1><a href="#Img_6">
+            <p.i style="font-style: italic;">Olanda</p.i>
+          </a>
+        </h1>
+          
+       <h5>
+            <p.l style="color: transparent;">MMMM</p.l>
+            Nicio vizita in Olanda nu este completa fara o trecere prin capitala tarii, Amsterdam; in tot cazul tara lalelelor abunda in locatii care mai de care mai atragatoare. De la clasicele mori de vant si magnificele campuri cu flori pana la centrele istorice ale oraselor, impanzite de muzee si atractii turistice, Olanda este o destinatie care ofera extrem de multe celor care vin pana aici. Cu peste 150 de cladiri monumentale fabuloase si la fel de multe poduri, Amsterdam le ofera turistilor posibilitatea de a-si petrece o mare parte din timp explorand excentricitatile si muzeele fantastice care impanzesc cei aproape 100 de kilometri de canale din oras. Casa Annei Frank si Muzeul Rijksmuseum sunt cele mai populare atractii turistice, in timp ce zona Prinsengracht este una dintre cele mai bune locatii pentru cumparaturi, admirarea vitrinelor, vizitarea pub-urilor si explorarea coffee shop-urilor din Amsterdam.</h5>
+            
+
+
+
+     <h1><a href="#Img_7">
+        <p.i style="font-style: italic;">Spania</p.i>
+       </a>
+    </h1>
+            
+         <h5>
+              <p.l style="color: transparent;">MMMM</p.l>
+              Spania este o țară spectaculoasă din Europa de Sud și una dintre cele mai populare destinații turistice din Europa. De la istorie și artă până la soare, mare și viață de noapte și chiar și mâncare cum nu găsești în multe locuri din lume, Spania oferă experiențe pe toate gusturile. În plus, există nenumărate obiective turistice care merită văzute.  Amplasarea geografică a Spaniei, litoralurile, peisajele diverse, patrimoniul istoric, cultura vibrantă și infrastructura excelentă au făcut din industria turistică internațională a țării una dintre cele mai mari din lume.</h5>
+              
+
+
+    </div>
+
+
+    </div>
+
+    
+
+    <div class=" ImagePageContent ">
+
+      <h1>
+        <a id="Img_1"> </a>
+        Croatia
+      </h1>
+      <img src="Img/croatia.jpeg " alt="" width="auto" height="100%">
+
+      <h1>
+        <a id="Img_2"> </a>
+        Franta
+      </h1>
+      <img src="Img/franta.jpg " alt="" width="auto" height="100%">
+
+      <h1>
+        <a id="Img_3"> </a>
+        Germania
+      </h1>
+      <img src="Img/Germania.jpg" alt="" width="auto" height="100%">
+  
+  
+      <h1>
+        <a id="Img_4"> </a>
+        Grecia
+      </h1>
+      <img src="Img/grecia.jpg" alt="" width="auto" height="100%">
+  
+  
+      <h1>
+        <a id="Img_5"> </a>
+        Italia
+      </h1>
+      <img src="Img/italia.jpg " alt="" width="auto" height="100%">
+  
+  
+      <h1>
+        <a id="Img_6"> </a>
+        Olanda
+      </h1>
+      <img src="Img/olanda.jpg " alt="" width="auto" height="100%">
+  
+  
+      <h1>
+        <a id="Img_7"> </a>
+        Spania
+      </h1>
+      <img src="Img/spania.jpg" alt="" width="auto" height="100%">
+  
+
+    </div>
+
+   
+
+
+  </div>
+</body>
